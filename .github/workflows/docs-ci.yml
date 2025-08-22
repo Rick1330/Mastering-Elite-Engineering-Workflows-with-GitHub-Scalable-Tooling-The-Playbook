@@ -1,0 +1,27 @@
+name: Docs CI
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+
+jobs:
+  lint-and-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - name: Install MkDocs and plugins
+        run: pip install mkdocs mkdocs-material markdown-include
+      - name: Lint Markdown
+        run: | # Add your markdown linter command here, e.g., markdownlint-cli2
+          echo "Markdown linting placeholder"
+      - name: Check internal links
+        run: mkdocs build --strict --verbose
+
+

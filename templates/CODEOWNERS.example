@@ -1,0 +1,15 @@
+# .github/CODEOWNERS
+
+# Global owner
+*       @global-owner
+
+# Frontend code
+/src/frontend/ @frontend-team
+
+# Backend code
+/src/backend/  @backend-team
+
+# Documentation
+/docs/        @docs-team
+
+
