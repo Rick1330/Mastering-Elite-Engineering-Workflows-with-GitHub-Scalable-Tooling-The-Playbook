@@ -10,7 +10,7 @@ updates:
       interval: "weekly"
   - package-ecosystem: "pip" # Example for Python projects
     directory: "/"
-    schedule:
+    schedule: 
       interval: "weekly"
 
 
