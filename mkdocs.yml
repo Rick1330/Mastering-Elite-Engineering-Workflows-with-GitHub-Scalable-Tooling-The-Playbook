@@ -1,0 +1,48 @@
+site_name: Mastering Elite Engineering Workflows
+site_url: https://rick1330.github.io/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/
+
+nav:
+  - Home: index.md
+  - Code Review & Collaboration: 01-code-review.md
+  - GitHub Actions & Automation: 02-actions-automation.md
+  - Governance & Security: 03-governance.md
+  - Repository Structure: 04-repo-structure.md
+  - Metrics & Developer Experience: 05-metrics-and-devex.md
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: black
+      accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.highlight
+    - search.share
+    - toc.integrate
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+extra_css: []
