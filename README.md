@@ -6,7 +6,7 @@ This repository provides a comprehensive playbook for establishing elite enginee
 
 For detailed guidance, best practices, and tactical implementation details, please visit the official documentation site:
 
-**[https://rick1330.github.io/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/](https://rick1330.github.io/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/)**
+**[https://mastering-elite-engineering-workflo-alpha.vercel.app/)**
 
 ## ✨ Key Features
 
