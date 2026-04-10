@@ -1,0 +1,98 @@
+{
+  "name": "Mastering Elite Engineering Workflows",
+  "theme": "mintlify",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#6366f1",
+    "light": "#818cf8",
+    "dark": "#4f46e5",
+    "anchors": {
+      "from": "#6366f1",
+      "to": "#818cf8"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows"
+  },
+  "tabs": [
+    {
+      "name": "Leadership & Strategy",
+      "url": "leadership-strategy"
+    },
+    {
+      "name": "Architecture & Design",
+      "url": "architecture-design"
+    },
+    {
+      "name": "Automation & Operations",
+      "url": "automation-operations"
+    },
+    {
+      "name": "Developer Experience",
+      "url": "developer-experience"
+    }
+  ],
+  "anchors": [],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": ["index.md"]
+    },
+    {
+      "group": "Leadership & Strategy",
+      "pages": [
+        "leadership-strategy/code-review-collaboration.md",
+        "leadership-strategy/governance-security.md"
+      ]
+    },
+    {
+      "group": "Architecture & Design",
+      "pages": [
+        "architecture-design/repository-structure.md"
+      ]
+    },
+    {
+      "group": "Automation & Operations",
+      "pages": [
+        "automation-operations/github-actions-ci-cd.md",
+        "automation-operations/policy-as-code.md"
+      ]
+    },
+    {
+      "group": "Developer Experience",
+      "pages": [
+        "developer-experience/metrics-devex.md",
+        "developer-experience/space-framework.md",
+        "developer-experience/cognitive-load-management.md"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows"
+  },
+  "backgroundImage": "/background.png",
+  "modeToggle": {
+    "default": "dark"
+  },
+  "analytics": {
+    "ga4": {
+      "measurementId": ""
+    }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "openapi": null
+}
