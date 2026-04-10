@@ -22,7 +22,7 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
+    "name": "View on GitHub",
     "url": "https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows"
   },
   "tabs": [
@@ -53,20 +53,24 @@
       "group": "Leadership & Strategy",
       "pages": [
         "leadership-strategy/code-review-collaboration.md",
-        "leadership-strategy/governance-security.md"
+        "leadership-strategy/governance-security.md",
+        "leadership-strategy/ai-assisted-workflows.md"
       ]
     },
     {
       "group": "Architecture & Design",
       "pages": [
-        "architecture-design/repository-structure.md"
+        "architecture-design/repository-structure.md",
+        "architecture-design/platform-engineering.md",
+        "architecture-design/service-catalog.md"
       ]
     },
     {
       "group": "Automation & Operations",
       "pages": [
         "automation-operations/github-actions-ci-cd.md",
-        "automation-operations/policy-as-code.md"
+        "automation-operations/policy-as-code.md",
+        "automation-operations/security-compliance.md"
       ]
     },
     {
@@ -74,7 +78,8 @@
       "pages": [
         "developer-experience/metrics-devex.md",
         "developer-experience/space-framework.md",
-        "developer-experience/cognitive-load-management.md"
+        "developer-experience/cognitive-load-management.md",
+        "developer-experience/measuring-toil.md"
       ]
     }
   ],
@@ -94,5 +99,8 @@
     "thumbsRating": true,
     "suggestEdit": true
   },
-  "openapi": null
+  "openapi": null,
+  "api": {
+    "baseUrl": ""
+  }
 }
