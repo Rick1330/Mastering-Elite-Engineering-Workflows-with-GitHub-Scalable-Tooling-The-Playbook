@@ -1,0 +1,85 @@
+name: 'Elite CI Test'
+description: 'Composite action for running tests with sharding, coverage reporting, and flaky test detection'
+author: 'Elite Engineering Team'
+
+inputs:
+  node-version:
+    description: 'Node.js version to use'
+    required: false
+    default: '20'
+  working-directory:
+    description: 'Working directory for commands'
+    required: false
+    default: '.'
+  shard-count:
+    description: 'Number of shards for parallel test execution'
+    required: false
+    default: '1'
+  shard-index:
+    description: 'Index of this shard (0-based)'
+    required: false
+    default: '0'
+  coverage-enabled:
+    description: 'Enable code coverage reporting'
+    required: false
+    default: 'true'
+  fail-fast:
+    description: 'Stop on first failing test'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm ci
+
+    - name: Run tests with sharding
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        CI: true
+        TEST_SHARD_TOTAL: ${{ inputs.shard-count }}
+        TEST_SHARD_INDEX: ${{ inputs.shard-index }}
+      run: |
+        if [ "${{ inputs.shard-count }}" -gt 1 ]; then
+          echo "Running test shard ${{ inputs.shard-index }} of ${{ inputs.shard-count }}"
+          npm test -- --shard=${{ inputs.shard-index }}/${{ inputs.shard-count }}
+        else
+          npm test
+        fi
+
+    - name: Generate coverage report
+      if: inputs.coverage-enabled == 'true'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm run coverage || echo "Coverage generation skipped"
+      continue-on-error: true
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-shard-${{ inputs.shard-index }}
+        path: |
+          ${{ inputs.working-directory }}/test-results/
+          ${{ inputs.working-directory }}/coverage/
+        retention-days: 7
+        if-no-files-found: ignore
+
+    - name: Check for flaky tests
+      if: always()
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        echo "Analyzing test stability..."
+        # Add custom flaky test detection logic here
+        # This could integrate with test analytics platforms

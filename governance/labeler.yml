@@ -1,0 +1,234 @@
+# GitHub Labeler Configuration
+# Automatically applies labels to pull requests based on file paths
+# Documentation: https://github.com/actions/labeler
+
+# =============================================================================
+# CHANGE TYPE LABELS
+# =============================================================================
+# Feature development
+feature:
+  - changed-files:
+      - any-glob-to-any-file: 'src/**/*'
+      - all-globs-to-all-files: '!src/**/*test*'
+      - all-globs-to-all-files: '!src/**/*spec*'
+
+# Bug fixes
+bugfix:
+  - head-branch: ['^fix/', '^hotfix/', 'fix-']
+
+# Documentation updates
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['docs/**/*', 'README.md', 'CONTRIBUTING.md', '*.md']
+
+# Test additions or modifications
+tests:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*test*', '**/*spec*', 'tests/**/*', '__tests__/**/*']
+
+# Infrastructure changes
+infrastructure:
+  - changed-files:
+      - any-glob-to-any-file: ['terraform/**/*', 'kubernetes/**/*', 'docker/**/*', '.github/workflows/**/*']
+
+# Dependency updates
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file: ['package.json', 'package-lock.json', 'requirements.txt', 'Gemfile', 'go.mod', 'Cargo.toml']
+
+# Configuration changes
+configuration:
+  - changed-files:
+      - any-glob-to-any-file: ['config/**/*', '.env*', '*.config.js', '*.config.ts', '*.yaml', '*.yml']
+
+# Performance improvements
+performance:
+  - head-branch: ['^perf/', 'performance']
+  - changed-files:
+      - any-glob-to-any-file: ['**/*perf*', 'benchmarks/**/*']
+
+# Security-related changes
+security:
+  - changed-files:
+      - any-glob-to-any-file: ['**/security/**/*', '**/auth/**/*', '**/encryption/**/*']
+  - head-branch: ['^security/', 'security-']
+
+# Refactoring without functional changes
+refactor:
+  - head-branch: ['^refactor/', 'refactor-']
+
+# Breaking changes
+breaking-change:
+  - body-regex: 'BREAKING CHANGE:'
+  - body-regex: 'Breaking Change:'
+
+# =============================================================================
+# RISK LEVEL LABELS (Auto-assigned based on scope)
+# =============================================================================
+# Low risk - documentation and tests only
+risk/low:
+  - changed-files:
+      - any-glob-to-any-file: ['docs/**/*', 'tests/**/*', '**/*.md']
+    all-changed-files-to-any-file:
+      - any-glob-to-any-file: ['docs/**/*', 'tests/**/*', '**/*.md']
+
+# Medium risk - standard feature work
+risk/medium:
+  - changed-files:
+      - any-glob-to-any-file: ['src/**/*']
+    all-changed-files-to-any-file:
+      - any-glob-to-any-file: ['src/**/*']
+
+# High risk - core systems and architecture
+risk/high:
+  - changed-files:
+      - any-glob-to-any-file: ['src/core/**/*', 'src/platform/**/*', 'src/backend/api/**/*']
+
+# Critical risk - security and infrastructure
+risk/critical:
+  - changed-files:
+      - any-glob-to-any-file: ['**/security/**/*', 'terraform/**/*', 'kubernetes/**/*', '.github/workflows/**/*']
+
+# =============================================================================
+# TEAM ASSIGNMENT LABELS
+# =============================================================================
+# Backend team
+team/backend:
+  - changed-files:
+      - any-glob-to-any-file: ['src/backend/**/*', 'src/api/**/*']
+
+# Frontend team
+team/frontend:
+  - changed-files:
+      - any-glob-to-any-file: ['src/frontend/**/*', 'src/components/**/*', 'src/pages/**/*']
+
+# Platform/SRE team
+team/platform:
+  - changed-files:
+      - any-glob-to-any-file: ['platform/**/*', 'infrastructure/**/*', 'terraform/**/*', 'kubernetes/**/*']
+
+# Data team
+team/data:
+  - changed-files:
+      - any-glob-to-any-file: ['src/data/**/*', 'pipelines/**/*', 'analytics/**/*']
+
+# Mobile team
+team/mobile:
+  - changed-files:
+      - any-glob-to-any-file: ['src/mobile/**/*', 'ios/**/*', 'android/**/*']
+
+# DevOps team
+team/devops:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**/*', '.github/actions/**/*', 'ci-cd/**/*']
+
+# QA team
+team/qa:
+  - changed-files:
+      - any-glob-to-any-file: ['tests/**/*', 'e2e/**/*', 'cypress/**/*', 'selenium/**/*']
+
+# Security team
+team/security:
+  - changed-files:
+      - any-glob-to-any-file: ['security/**/*', 'compliance/**/*', 'audit/**/*']
+
+# =============================================================================
+# SIZE LABELS (Lines of code changed)
+# Note: These require additional configuration in the labeler action
+# =============================================================================
+# Small PR (< 50 lines)
+size/XS:
+  - changed-files: [] # Requires custom action with size thresholds
+
+# Medium PR (50-200 lines)
+size/S:
+  - changed-files: [] # Requires custom action with size thresholds
+
+# Large PR (200-500 lines)
+size/M:
+  - changed-files: [] # Requires custom action with size thresholds
+
+# Extra Large PR (500+ lines)
+size/L:
+  - changed-files: [] # Requires custom action with size thresholds
+
+# =============================================================================
+# WORKFLOW STATUS LABELS
+# =============================================================================
+# Needs review
+needs-review:
+  - base-branch: ['main', 'develop', 'release/*']
+
+# Work in progress
+wip:
+  - head-branch: ['^wip/', 'wip-', '-wip']
+  - title-regex: '^WIP:'
+
+# Blocked
+blocked:
+  - body-regex: '🚫 BLOCKED:'
+  - body-regex: 'Status: Blocked'
+
+# Ready to merge
+ready-to-merge:
+  - body-regex: '✅ Ready to Merge'
+
+# =============================================================================
+# COMPLIANCE & AUDIT LABELS
+# =============================================================================
+# Requires compliance review
+compliance-review-required:
+  - changed-files:
+      - any-glob-to-any-file: ['compliance/**/*', 'legal/**/*', 'privacy/**/*']
+
+# Requires security audit
+security-audit-required:
+  - changed-files:
+      - any-glob-to-any-file: ['**/security/**/*', '**/auth/**/*', '**/encryption/**/*']
+
+# Requires performance testing
+perf-testing-required:
+  - changed-files:
+      - any-glob-to-any-file: ['src/core/**/*', 'src/api/**/*']
+  - head-branch: ['^perf/', 'performance']
+
+# =============================================================================
+# RELEASE MANAGEMENT LABELS
+# =============================================================================
+# Release candidate
+release-candidate:
+  - base-branch: ['release/*']
+
+# Hotfix
+hotfix:
+  - head-branch: ['^hotfix/', 'hotfix-']
+
+# Changelog required
+changelog-required:
+  - changed-files:
+      - any-glob-to-any-file: ['src/**/*']
+    all-changed-files-to-any-file:
+      - any-glob-to-any-file: ['!CHANGELOG.md', '!changelog/**/*']
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. This configuration is used with the actions/labeler GitHub Action
+# 2. Multiple conditions can be combined using AND/OR logic
+# 3. Glob patterns follow standard gitignore syntax
+# 4. Team labels help route PRs to appropriate reviewers automatically
+# 5. Risk labels inform review requirements and SLAs
+# 
+# Example workflow usage:
+# ```yaml
+# name: Auto Label PRs
+# on: [pull_request_target]
+# jobs:
+#   label:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/labeler@v5
+#         with:
+#           repo-token: "${{ secrets.GITHUB_TOKEN }}"
+#           configuration-path: '.github/labeler.yml'
+# ```

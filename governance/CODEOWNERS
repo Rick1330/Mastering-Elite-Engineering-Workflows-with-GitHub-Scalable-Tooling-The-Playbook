@@ -1,0 +1,202 @@
+# CODEOWNERS - Enterprise Configuration
+# This file defines code owners for automated review assignment
+# Format: https://help.github.com/en/articles/about-code-owners
+
+# =============================================================================
+# GLOBAL OWNERSHIP
+# =============================================================================
+# Default owner for all files not explicitly matched below
+*    @engineering-leads
+
+# =============================================================================
+# EXECUTIVE LEADERSHIP
+# =============================================================================
+# C-level and VP-level oversight for critical business logic
+/executive/                    @ceo @cto @vp-engineering
+
+# =============================================================================
+# ENGINEERING TEAMS
+# =============================================================================
+# Platform Engineering Team - Core infrastructure and shared services
+/platform/                     @platform-team
+/platform/infrastructure/      @platform-team @sre-team
+/platform/api-gateway/         @platform-team @backend-leads
+
+# Backend Services
+/src/backend/                  @backend-team
+/src/backend/api/              @backend-team @api-leads
+/src/backend/services/         @backend-team
+/src/backend/workers/          @backend-team @platform-team
+
+# Frontend Applications
+/src/frontend/                 @frontend-team
+/src/frontend/components/      @frontend-team @design-system-team
+/src/frontend/pages/           @frontend-team
+/src/frontend/hooks/           @frontend-team
+
+# Mobile Applications
+/src/mobile/                   @mobile-team
+/src/mobile/ios/               @ios-team
+/src/mobile/android/           @android-team
+
+# Data Engineering
+/src/data/                     @data-team
+/src/data/pipelines/           @data-team @platform-team
+/src/data/analytics/           @data-team @analytics-team
+
+# =============================================================================
+# SECURITY & COMPLIANCE
+# =============================================================================
+# Security-critical code requires security team review
+**/security/                   @security-team
+**/auth/                       @security-team @backend-leads
+**/encryption/                 @security-team
+**/compliance/                 @security-team @compliance-officer
+.github/workflows/security*    @security-team
+.github/workflows/compliance*  @security-team @compliance-officer
+
+# Dependency management
+package.json                   @platform-team @security-team
+requirements.txt               @platform-team @security-team
+Gemfile                        @platform-team @security-team
+go.mod                         @platform-team @security-team
+Cargo.toml                     @platform-team @security-team
+
+# =============================================================================
+# INFRASTRUCTURE & DEVOPS
+# =============================================================================
+# Infrastructure as Code
+/terraform/                    @sre-team @platform-team
+/kubernetes/                   @sre-team @platform-team
+/docker/                       @sre-team @platform-team
+/.github/workflows/            @devops-team @platform-team
+
+# Environment configurations
+/config/production/            @sre-team @engineering-leads
+/config/staging/               @sre-team
+/config/development/           @engineering-team
+
+# =============================================================================
+# DOCUMENTATION
+# =============================================================================
+# Technical documentation
+/docs/                         @docs-team
+/README.md                     @engineering-leads
+/CONTRIBUTING.md               @engineering-leads @docs-team
+/CHANGELOG.md                  @release-managers
+
+# API Documentation
+/docs/api/                     @api-leads @docs-team
+/openapi/                      @api-leads @backend-team
+
+# User Documentation
+/docs/user-guide/              @product-team @docs-team
+/docs/tutorials/               @developer-advocacy @docs-team
+
+# =============================================================================
+# TESTING & QUALITY
+# =============================================================================
+# Test files across all domains
+/tests/                        @qa-team
+/**/*test*/                    @qa-team
+/**/*spec*/                    @qa-team
+/cypress/                      @qa-team @frontend-team
+/selenium/                     @qa-team @backend-team
+
+# Performance testing
+/perf-tests/                   @performance-team @sre-team
+/benchmarks/                   @performance-team
+
+# =============================================================================
+# DESIGN & UX
+# =============================================================================
+# Design system and assets
+/design-system/                @design-team @frontend-leads
+/assets/                       @design-team
+/src/**/*.scss                 @design-team @frontend-team
+/src/**/*.css                  @design-team @frontend-team
+
+# UX Research
+/ux-research/                  @ux-research-team @product-team
+
+# =============================================================================
+# RELEASE MANAGEMENT
+# =============================================================================
+# Release coordination
+/releases/                     @release-managers
+/versioning/                   @release-managers
+/changelog/                    @release-managers @docs-team
+
+# Feature flags
+/feature-flags/                @platform-team @product-team
+/config/features/              @platform-team @product-team
+
+# =============================================================================
+# LEGACY & DEPRECATED
+# =============================================================================
+# Legacy code requiring extra scrutiny
+/legacy/                       @engineering-leads @architecture-committee
+/deprecated/                   @architecture-committee
+
+# =============================================================================
+# SPECIAL PATTERNS
+# =============================================================================
+# Database migrations (require DBA review)
+/db/migrations/                @dba-team @backend-leads
+/**/*.sql                      @dba-team
+
+# Configuration files with security implications
+.env.example                   @security-team @sre-team
+docker-compose*.yml            @sre-team @platform-team
+nginx.conf                     @sre-team
+apache.conf                    @sre-team
+
+# Build and tooling configuration
+webpack.config.js              @frontend-leads @platform-team
+babel.config.js                @frontend-leads @platform-team
+tsconfig.json                  @typescript-leads @platform-team
+.eslintrc*                     @frontend-leads @quality-team
+.prettierrc*                   @frontend-leads @quality-team
+
+# CI/CD Pipeline configurations
+.github/actions/               @devops-team @platform-team
+.circleci/                     @devops-team @platform-team
+.gitlab-ci.yml                 @devops-team @platform-team
+Jenkinsfile                    @devops-team @platform-team
+
+# =============================================================================
+# OPTIONAL REVIEWERS (Not required but recommended)
+# =============================================================================
+# These reviewers will be notified but won't block merges
+# Uncomment to enable optional reviews
+# ^/src/experimental/          @innovation-team #optional
+# /proof-of-concept/           @architecture-committee #optional
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. Team handles should be GitHub team names (e.g., @backend-team)
+# 2. Individual users can be specified (e.g., @username)
+# 3. Multiple owners can be specified per pattern (space-separated)
+# 4. Patterns follow gitignore-style matching
+# 5. More specific patterns override general ones
+# 6. Use #optional suffix for non-blocking reviews
+# 
+# Review Requirements by Risk Level:
+# - Low Risk (docs, tests): 1 approval from any owner
+# - Medium Risk (bug fixes, features): 1-2 approvals including code owner
+# - High Risk (architecture, core logic): 2+ approvals including domain expert
+# - Critical Risk (security, infra): 2+ approvals including security/sre team
+
+# =============================================================================
+# MAINTENANCE
+# =============================================================================
+# This file should be reviewed quarterly by:
+# - Engineering Leadership
+# - Platform Team
+# - Security Team
+# 
+# Update team assignments when:
+# - Team structure changes
+# - New domains are added
+# - Ownership responsibilities shift
