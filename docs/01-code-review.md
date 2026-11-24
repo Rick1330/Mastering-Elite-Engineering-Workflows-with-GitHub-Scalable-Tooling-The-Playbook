@@ -10,16 +10,14 @@ Code review is a cornerstone of high-quality software development, serving as bo
 
 Elite engineering teams implement a tiered review framework that scales the intensity of review based on the risk and complexity of changes:
 
-| Change Type | Risk Level | Review Protocol | Reviewers Required | SLA |
-|---|---|---|---|---|
-| Documentation | Low | Light review | 1 reviewer | 4 hours |
-| Test additions | Low | Standard review | 1 reviewer | 8 hours |
-| Bug fixes | Medium | Standard review | 1-2 reviewers | 8 hours |
-| New features | High | Thorough review | 2+ reviewers | 24 hours |
-| Core architecture | Critical | Deep review | 2+ reviewers + architect | 48 hours |
-| Security-related | Critical | Security review | 2+ reviewers + security expert | 24 hours |
+- **Documentation (low risk):** light review by one reviewer.
+- **Test additions (low risk):** standard review by one reviewer.
+- **Bug fixes (medium risk):** standard review by one or two reviewers.
+- **New features (high risk):** thorough review by at least two reviewers.
+- **Core architecture (critical risk):** deep review by at least two reviewers and an architect.
+- **Security-related changes (critical risk):** security review by at least two reviewers and a security specialist.
 
-**Implementation Note:** This framework should be documented in your CONTRIBUTING.md file and enforced through branch protection rules and PR templates.
+Use the separate response-time targets below as example starting points, not an additional risk-based SLA. Document local priority definitions, business hours, escalation, and exceptions in `CONTRIBUTING.md`. Enforce merge requirements with repository rules, not only with a template.
 
 ### Small Team Implementation (3-7 engineers)
 
@@ -58,11 +56,7 @@ The secondary reviewer focuses on:
 
 ### Code Owner
 
-When using CODEOWNERS, the designated owner:
-- Is automatically assigned to relevant PRs
-- Has final approval authority for their domain
-- Ensures consistency across the codebase
-- May delegate reviews but maintains accountability
+When using `CODEOWNERS`, the designated owner is automatically requested for review on matching pull requests, subject to GitHub's rules. A CODEOWNERS entry alone does not block merging. If owner approval is required, enable the corresponding required-code-owner-review rule in branch protection or a repository ruleset. Owners and teams also need the appropriate repository access. See [GitHub's CODEOWNERS documentation](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
 ### Expert Reviewer
 
@@ -72,22 +66,11 @@ For specialized concerns:
 - **Accessibility expert**: Ensures accessibility standards
 - **UX expert**: Reviews user-facing changes
 
-## Review Latency and SLAs
+## Review response expectations
 
-### Target Metrics
+Set local expectations for acknowledging a review request and completing the review. There is no useful universal target based only on team size. Agree on working hours, priority labels, ownership and handoff, urgent-request escalation, and how the team will respond when review demand exceeds capacity. Measure first response separately from time to resolution, and revisit the agreement using actual workload and team feedback.
 
-Elite teams establish clear expectations for review turnaround:
-
-| Team Size | Priority | Target First Response | Target Resolution |
-|---|---|---|---|
-| Small (3-7) | Normal | 4 business hours | 1 business day |
-| Small (3-7) | High | 2 business hours | 4 business hours |
-| Mid-sized (10-30) | Normal | 8 business hours | 2 business days |
-| Mid-sized (10-30) | High | 4 business hours | 1 business day |
-| Large (30+) | Normal | 24 business hours | 3 business days |
-| Large (30+) | High | 8 business hours | 1 business day |
-
-**Implementation Tip:** Use GitHub labels to indicate priority and integrate with Slack or MS Teams for high-priority notifications.
+**Implementation tip:** Use labels or another visible signal for genuinely urgent changes. Keep an expedited path explicit and require a follow-up review rather than treating priority as permission to bypass controls.
 
 ### Reducing Review Bottlenecks
 
@@ -179,6 +162,9 @@ Integrate these automated checks into your PR workflow:
 ```yaml
 name: PR Checks
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [ main, develop ]
@@ -187,11 +173,11 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
-          node-version: '18'
+          node-version: '24'
       - name: Install dependencies
         run: npm ci
       - name: Lint
@@ -204,13 +190,29 @@ jobs:
         run: npm run analyze
 ```
 
+This Node.js example assumes the repository defines the referenced scripts and lockfile. For workflows with elevated permissions or access to sensitive data, review GitHub guidance for untrusted pull-request code and token permissions before adapting it.
+
 ### Required Status Checks
 
-Configure branch protection rules to require:
-- All CI checks pass
-- Required number of approvals
-- No stale approvals after new commits
-- Resolved conversations
+Configure branch protection or rulesets to require:
+- All relevant CI checks pass
+- The required number of approvals for the change risk
+- Resolved review conversations where the team uses this control
+- A deliberate policy for dismissing stale approvals after material changes
+
+Stale-review dismissal is a policy choice. Decide which changes should invalidate an approval and configure that behavior in the repository's protection rules.
+
+## End-to-end review lifecycle
+
+1. **Prepare the change.** Keep the pull request focused. Describe the problem, intended result, risk, test evidence, and rollout or migration plan. Split unrelated changes where practical.
+2. **Choose reviewers.** Request reviewers with the relevant context. Use `CODEOWNERS` for routing and repository rules for required approvals. Assign a driver to coordinate high-risk or cross-team changes.
+3. **Review for substance.** Check correctness, edge cases, tests, security and privacy, compatibility, operability, and whether the change solves the stated problem. Automate formatting and other mechanical checks.
+4. **Make feedback actionable.** State the concern and its impact, then suggest a change or ask a specific question. Label blocking concerns consistently. Use a synchronous discussion when written comments stop making progress.
+5. **Resolve decisions.** The author responds to comments and marks threads resolved when the concern is addressed or the reviewer agrees it is not blocking. Record material design decisions where future maintainers can find them.
+6. **Confirm merge readiness.** Verify required checks and approvals, review any changes since approval according to policy, and ensure rollout or database-migration steps are understood.
+7. **Verify after merge.** Monitor deployment and service signals for risky changes. Close the loop on incidents or follow-up work rather than assuming a green CI run proves production health.
+
+For urgent fixes, define an explicit expedited path with an after-the-fact review and incident record. Do not silently bypass controls or treat a high-priority label as an approval.
 
 ## Effective Feedback Patterns
 
@@ -228,12 +230,10 @@ Example:
 
 ### Feedback Anti-Patterns to Avoid
 
-| Anti-Pattern | Example | Better Alternative |
-|---|---|---|
-| Nitpicking | "Use camelCase here" | Focus on substantive issues or automate style checks |
-| Vague feedback | "This doesn't look right" | "This approach might cause issues with concurrent access because..." |
-| Personal criticism | "Why would you do it this way?" | "This approach has some challenges. Have you considered...?" |
-| Overwhelming feedback | 50+ comments on a PR | Prioritize feedback and consider pair programming for complex changes |
+- **Nitpicking:** A comment such as “Use camelCase here” is better handled by a formatter or linter. Keep review attention on substantive behavior and design.
+- **Vague feedback:** Replace “This does not look right” with the concrete concern, such as “This approach might race when two requests update the record at the same time.”
+- **Personal criticism:** Focus on the code and its impact. Ask, “Could this approach make the behavior harder to test? Have you considered…?”
+- **Overwhelming feedback:** Prioritize blocking concerns and group related suggestions. For complex changes, pair or discuss the design rather than leaving dozens of disconnected comments.
 
 ## Collaborative Review Models
 
@@ -354,6 +354,4 @@ For large organizations:
 
 ---
 
-*Last updated: 2025-08-22*
-
-
+*Last reviewed: 2026-11-24*

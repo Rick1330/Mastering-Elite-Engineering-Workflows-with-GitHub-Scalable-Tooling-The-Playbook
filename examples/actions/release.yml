@@ -1,41 +1,34 @@
-name: Release Workflow
+name: Draft release
 
 on:
   push:
     tags:
-      - 'v*.*.*' # Triggers on tags like v1.0.0
+      - 'v*.*.*'
+
+permissions:
+  contents: read
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
         with:
-          node-version: '20'
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
       - name: Install dependencies
         run: npm ci
       - name: Build project
         run: npm run build
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Package build output
+        run: tar -czf "dist-${GITHUB_REF_NAME}.tar.gz" dist/
+      - name: Create draft GitHub release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/your-artifact.zip # Adjust path to your build artifact
-          asset_name: your-artifact-${{ github.ref_name }}.zip
-          asset_content_type: application/zip
-
-
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "dist-${GITHUB_REF_NAME}.tar.gz" --verify-tag --generate-notes --draft

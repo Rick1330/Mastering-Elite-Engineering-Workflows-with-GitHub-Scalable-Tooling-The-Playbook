@@ -15,8 +15,11 @@
         <link rel="next" href="01-code-review/">
       
       
+        
+      
+      
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -24,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,7 +53,6 @@
     
       
 
-    
     
     
   </head>
@@ -312,6 +314,44 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="06-organizations-project-planning/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organizations & Project Planning
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="07-complementary-tools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Complementary Tools & Integrations
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -368,9 +408,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -381,9 +426,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -404,36 +454,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#executive-summary" class="md-nav__link">
+  <a href="#about-this-playbook" class="md-nav__link">
     <span class="md-ellipsis">
-      Executive Summary
+      
+        About this playbook
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#who-should-use-it" class="md-nav__link">
     <span class="md-ellipsis">
-      Audience
+      
+        Who should use it
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-adopt-in-30-minutes" class="md-nav__link">
+  <a href="#start-here" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Adopt in 30 Minutes
+      
+        Start here
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#whats-inside" class="md-nav__link">
+  <a href="#guides" class="md-nav__link">
     <span class="md-ellipsis">
-      What’s Inside
+      
+        Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principles
+      
     </span>
   </a>
   
@@ -459,9 +528,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Code Review & Collaboration
+  
+
     
   </span>
+  
   
 
       </a>
@@ -481,9 +555,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     GitHub Actions & Automation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -503,9 +582,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Governance & Security
+  
+
     
   </span>
+  
   
 
       </a>
@@ -525,9 +609,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Repository Structure
+  
+
     
   </span>
+  
   
 
       </a>
@@ -547,9 +636,68 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Metrics & Developer Experience
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06-organizations-project-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations & Project Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07-complementary-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complementary Tools & Integrations
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -567,6 +715,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -574,33 +723,38 @@
 
 
 <h1 id="mastering-elite-engineering-workflows">Mastering Elite Engineering Workflows</h1>
-<p>Last updated: 2025-08-22</p>
-<h2 id="executive-summary">Executive Summary</h2>
-<p>This playbook provides a production-ready framework to architect, implement, and scale elite engineering practices on GitHub. It distills proven patterns for code review, CI/CD automation, governance, repository structure, and metrics/DevEx into an actionable toolkit with runnable examples and automated documentation publishing.</p>
-<h2 id="audience">Audience</h2>
+<p><em>Last reviewed: 2026-11-24</em></p>
+<h2 id="about-this-playbook">About this playbook</h2>
+<p>This playbook helps engineering teams design and improve GitHub-centered workflows for code review, CI/CD, governance, repository structure, planning, measurement, and tool integration. Treat examples as starting points: adapt permissions, controls, release processes, and team expectations to your own environment before applying them.</p>
+<h2 id="who-should-use-it">Who should use it</h2>
 <ul>
-<li>Engineering leaders and architects who define standards and governance</li>
-<li>Staff/principal engineers who design CI/CD and tooling</li>
-<li>Senior engineers who drive day-to-day code quality and delivery</li>
+<li>Engineering leaders defining shared practices and governance.</li>
+<li>Staff and principal engineers designing platforms, CI/CD, and repository architecture.</li>
+<li>Senior engineers improving day-to-day delivery, code review, and developer experience.</li>
 </ul>
-<h2 id="how-to-adopt-in-30-minutes">How to Adopt in 30 Minutes</h2>
+<h2 id="start-here">Start here</h2>
 <ol>
-<li>Fork or clone this repo and enable GitHub Actions.</li>
-<li>Copy the <code>.github/</code> workflows and templates to your repositories.</li>
-<li>Customize <code>CODEOWNERS</code> and branch protection rules to match your team.</li>
-<li>Review <code>CONTRIBUTING.md</code> to align review tiers, SLAs, and checklists.</li>
-<li>Build the docs site locally: <code>pip install -r docs/requirements.txt &amp;&amp; mkdocs build</code>.</li>
-<li>Publish via GitHub Pages using the provided workflow.</li>
+<li>Clone the repository and review its <a href="https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/blob/main/CONTRIBUTING.md">contribution guidance</a> and <a href="https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/blob/main/SECURITY.md">security policy</a>.</li>
+<li>Install the documentation dependencies from the repository root and build the site:
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+</code></pre></div></li>
+<li>Choose the guide that matches the decision you are making. Use the implementation checklists as prompts, not universal compliance requirements.</li>
+<li>Copy only the relevant examples from <code>examples/actions/</code> or <code>templates/</code>. The workflows in <code>.github/workflows/</code> are for this repository’s documentation and security checks, not turnkey application pipelines.</li>
+<li>Before production use, verify action versions, permissions, secrets, required settings, and project-specific commands.</li>
 </ol>
-<h2 id="whats-inside">What’s Inside</h2>
+<h2 id="guides">Guides</h2>
 <ul>
-<li>Code Review &amp; Collaboration best practices</li>
-<li>GitHub Actions CI/CD patterns and deployment examples</li>
-<li>Governance and security guardrails (CODEOWNERS, branch protection)</li>
-<li>Repository structure guidance for scale</li>
-<li>Metrics and Developer Experience (DORA + surveys)</li>
+<li><a href="01-code-review/">Code Review &amp; Collaboration</a>: risk-based review, reviewer responsibilities, response expectations, feedback, and adoption.</li>
+<li><a href="02-actions-automation/">GitHub Actions &amp; Automation</a>: CI, deployment, reusable automation, security, and maintenance.</li>
+<li><a href="03-governance/">Governance &amp; Security</a>: access controls, repository policy, CODEOWNERS, and security operations.</li>
+<li><a href="04-repo-structure/">Repository Structure</a>: monorepo, polyrepo, dependency, visibility, and discovery decisions.</li>
+<li><a href="05-metrics-and-devex/">Metrics &amp; Developer Experience</a>: DORA, SPACE, surveys, data quality, and improvement loops.</li>
+<li><a href="06-organizations-project-planning/">Organizations &amp; Project Planning</a>: teams, permissions, GitHub Projects, and cross-repository work.</li>
+<li><a href="07-complementary-tools/">Complementary Tools &amp; Integrations</a>: tool selection, data ownership, integration security, and lifecycle.</li>
 </ul>
-<p>Use the left navigation to explore each area in depth.</p>
+<h2 id="principles">Principles</h2>
+<p>Keep guidance concrete and reviewable. Separate required controls from optional examples. Do not copy a workflow without understanding its event triggers, permissions, secrets, runner trust, and deployment protections. Measure team systems to improve them; do not use raw activity metrics as individual quotas.</p>
 
 
 
@@ -648,7 +802,7 @@
       
     
     <a href="https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -665,10 +819,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "search.share", "toc.integrate"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "search.share", "toc.integrate"], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
       

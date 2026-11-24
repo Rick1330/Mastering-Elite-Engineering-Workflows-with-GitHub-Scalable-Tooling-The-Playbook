@@ -1,34 +1,39 @@
 # Mastering Elite Engineering Workflows
 
-Last updated: 2025-08-22
+*Last reviewed: 2026-11-24*
 
-## Executive Summary
+## About this playbook
 
-This playbook provides a production-ready framework to architect, implement, and scale elite engineering practices on GitHub. It distills proven patterns for code review, CI/CD automation, governance, repository structure, and metrics/DevEx into an actionable toolkit with runnable examples and automated documentation publishing.
+This playbook helps engineering teams design and improve GitHub-centered workflows for code review, CI/CD, governance, repository structure, planning, measurement, and tool integration. Treat examples as starting points: adapt permissions, controls, release processes, and team expectations to your own environment before applying them.
 
-## Audience
+## Who should use it
 
-- Engineering leaders and architects who define standards and governance
-- Staff/principal engineers who design CI/CD and tooling
-- Senior engineers who drive day-to-day code quality and delivery
+- Engineering leaders defining shared practices and governance.
+- Staff and principal engineers designing platforms, CI/CD, and repository architecture.
+- Senior engineers improving day-to-day delivery, code review, and developer experience.
 
-## How to Adopt in 30 Minutes
+## Start here
 
-1. Fork or clone this repo and enable GitHub Actions.
-2. Copy the `.github/` workflows and templates to your repositories.
-3. Customize `CODEOWNERS` and branch protection rules to match your team.
-4. Review `CONTRIBUTING.md` to align review tiers, SLAs, and checklists.
-5. Build the docs site locally: `pip install -r docs/requirements.txt && mkdocs build`.
-6. Publish via GitHub Pages using the provided workflow.
+1. Clone the repository and review its [contribution guidance](https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/blob/main/CONTRIBUTING.md) and [security policy](https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook/blob/main/SECURITY.md).
+2. Install the documentation dependencies from the repository root and build the site:
+   ```bash
+   python -m pip install -r requirements.txt
+   mkdocs build --strict
+   ```
+3. Choose the guide that matches the decision you are making. Use the implementation checklists as prompts, not universal compliance requirements.
+4. Copy only the relevant examples from `examples/actions/` or `templates/`. The workflows in `.github/workflows/` are for this repository’s documentation and security checks, not turnkey application pipelines.
+5. Before production use, verify action versions, permissions, secrets, required settings, and project-specific commands.
 
-## What’s Inside
+## Guides
 
-- Code Review & Collaboration best practices
-- GitHub Actions CI/CD patterns and deployment examples
-- Governance and security guardrails (CODEOWNERS, branch protection)
-- Repository structure guidance for scale
-- Metrics and Developer Experience (DORA + surveys)
+- [Code Review & Collaboration](01-code-review.md): risk-based review, reviewer responsibilities, response expectations, feedback, and adoption.
+- [GitHub Actions & Automation](02-actions-automation.md): CI, deployment, reusable automation, security, and maintenance.
+- [Governance & Security](03-governance.md): access controls, repository policy, CODEOWNERS, and security operations.
+- [Repository Structure](04-repo-structure.md): monorepo, polyrepo, dependency, visibility, and discovery decisions.
+- [Metrics & Developer Experience](05-metrics-and-devex.md): DORA, SPACE, surveys, data quality, and improvement loops.
+- [Organizations & Project Planning](06-organizations-project-planning.md): teams, permissions, GitHub Projects, and cross-repository work.
+- [Complementary Tools & Integrations](07-complementary-tools.md): tool selection, data ownership, integration security, and lifecycle.
 
-Use the left navigation to explore each area in depth.
+## Principles
 
-
+Keep guidance concrete and reviewable. Separate required controls from optional examples. Do not copy a workflow without understanding its event triggers, permissions, secrets, runner trust, and deployment protections. Measure team systems to improve them; do not use raw activity metrics as individual quotas.

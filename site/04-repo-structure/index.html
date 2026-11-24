@@ -17,8 +17,11 @@
         <link rel="next" href="../05-metrics-and-devex/">
       
       
+        
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -26,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -52,7 +55,6 @@
     
       
 
-    
     
     
   </head>
@@ -314,6 +316,44 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../06-organizations-project-planning/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Organizations & Project Planning
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../07-complementary-tools/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Complementary Tools & Integrations
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -361,9 +401,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
       </a>
@@ -383,9 +428,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Code Review & Collaboration
+  
+
     
   </span>
+  
   
 
       </a>
@@ -405,9 +455,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     GitHub Actions & Automation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -427,9 +482,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Governance & Security
+  
+
     
   </span>
+  
   
 
       </a>
@@ -458,9 +518,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Repository Structure
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -471,9 +536,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Repository Structure
+  
+
     
   </span>
+  
   
 
       </a>
@@ -496,44 +566,65 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      
+        Introduction
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monorepo-vs-polyrepo-strategies" class="md-nav__link">
+  <a href="#choose-repository-boundaries" class="md-nav__link">
     <span class="md-ellipsis">
-      Monorepo vs. Polyrepo Strategies
+      
+        Choose repository boundaries
+      
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Monorepo vs. Polyrepo Strategies">
+    <nav class="md-nav" aria-label="Choose repository boundaries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#monorepo-single-repository-multiple-projects" class="md-nav__link">
+  <a href="#monorepo" class="md-nav__link">
     <span class="md-ellipsis">
-      Monorepo (Single Repository, Multiple Projects)
+      
+        Monorepo
+      
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#polyrepo-multiple-repositories-single-project-per-repo" class="md-nav__link">
+  <a href="#polyrepo" class="md-nav__link">
     <span class="md-ellipsis">
-      Polyrepo (Multiple Repositories, Single Project per Repo)
+      
+        Polyrepo
+      
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hybrid-approach" class="md-nav__link">
+  <a href="#hybrid-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Hybrid Approach
+      
+        Hybrid model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision questions
+      
     </span>
   </a>
   
@@ -545,37 +636,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-repository-layouts" class="md-nav__link">
+  <a href="#recommended-layouts" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommended Repository Layouts
+      
+        Recommended layouts
+      
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Recommended Repository Layouts">
+    <nav class="md-nav" aria-label="Recommended layouts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#standard-application-layout" class="md-nav__link">
+  <a href="#application-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Standard Application Layout
+      
+        Application repository
+      
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#librarymodule-layout" class="md-nav__link">
+  <a href="#monorepo_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Library/Module Layout
+      
+        Monorepo
+      
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#monorepo-layout-example-lernanx" class="md-nav__link">
+  <a href="#library-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Monorepo Layout (Example: Lerna/Nx)
+      
+        Library repository
+      
     </span>
   </a>
   
@@ -587,102 +686,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-dependencies" class="md-nav__link">
+  <a href="#monorepo-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Managing Dependencies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Managing Dependencies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dependency-pinning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dependency Pinning
+      
+        Monorepo implementation
+      
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#dependency-updates" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#polyrepo-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Dependency Updates
+      
+        Polyrepo implementation
+      
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#supply-chain-security" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#dependency-and-supply-chain-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Supply Chain Security
+      
+        Dependency and supply-chain practices
+      
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#visibility-and-discoverability" class="md-nav__link">
     <span class="md-ellipsis">
-      Visibility and Discoverability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Visibility and Discoverability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#readmemd-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      README.md Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#project-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project Documentation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#repository-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Repository Topics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#anti-patterns-and-warning-signs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Anti-Patterns and Warning Signs
+        Visibility and discoverability
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#expert-notes-structure-as-a-foundation" class="md-nav__link">
+  <a href="#common-failure-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      Expert Notes: Structure as a Foundation
+      
+        Common failure patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation checklist
+      
     </span>
   </a>
   
@@ -708,9 +771,68 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Metrics & Developer Experience
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-organizations-project-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations & Project Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-complementary-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complementary Tools & Integrations
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -728,6 +850,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -736,129 +859,144 @@
 
 <h1 id="repository-structure-organizing-for-scale">Repository Structure: Organizing for Scale</h1>
 <h2 id="introduction">Introduction</h2>
-<p>Effective repository structure is crucial for maintaining clarity, scalability, and collaboration within engineering teams. This section outlines best practices for organizing your codebase, managing dependencies, and structuring repositories to support diverse project types and team sizes. It covers strategies for monorepos, polyrepos, and hybrid approaches, ensuring your project layout promotes efficient development and clear ownership.</p>
-<h2 id="monorepo-vs-polyrepo-strategies">Monorepo vs. Polyrepo Strategies</h2>
-<h3 id="monorepo-single-repository-multiple-projects">Monorepo (Single Repository, Multiple Projects)</h3>
-<p><strong>Advantages:</strong>
-- <strong>Simplified dependency management:</strong> Easier to manage shared libraries and internal dependencies.
-- <strong>Atomic changes:</strong> A single commit can span multiple projects, ensuring consistency.
-- <strong>Cross-project refactoring:</strong> Easier to make large-scale changes across the entire codebase.
-- <strong>Unified tooling:</strong> Consistent build, test, and deployment processes.</p>
-<p><strong>Disadvantages:</strong>
-- <strong>Tooling complexity:</strong> Requires advanced tooling (e.g., Bazel, Nx, Lerna) for efficient builds.
-- <strong>Steeper learning curve:</strong> New developers may find the codebase overwhelming.
-- <strong>CI/CD challenges:</strong> Can lead to longer CI/CD times if not optimized for incremental builds.</p>
-<p><strong>Best Use Cases:</strong>
-- Large organizations with many interdependent services.
-- Teams that prioritize code sharing and consistent practices.
-- Projects with frequent cross-cutting changes.</p>
-<h3 id="polyrepo-multiple-repositories-single-project-per-repo">Polyrepo (Multiple Repositories, Single Project per Repo)</h3>
-<p><strong>Advantages:</strong>
-- <strong>Simplicity:</strong> Easier to set up and manage for smaller teams.
-- <strong>Clear ownership:</strong> Each repository has a distinct owner and purpose.
-- <strong>Independent deployments:</strong> Services can be deployed independently.
-- <strong>Faster CI/CD:</strong> CI/CD pipelines are typically faster as they only build one project.</p>
-<p><strong>Disadvantages:</strong>
-- <strong>Dependency management overhead:</strong> Managing shared libraries across repositories can be complex.
-- <strong>Inconsistent tooling:</strong> Different projects may use different build/deployment tools.
-- <strong>Cross-project changes:</strong> Refactoring across repositories can be cumbersome.</p>
-<p><strong>Best Use Cases:</strong>
-- Small to medium-sized teams.
-- Microservices architectures where services are loosely coupled.
-- Open-source projects with distinct components.</p>
-<h3 id="hybrid-approach">Hybrid Approach</h3>
-<p>Combines aspects of both, e.g., a monorepo for tightly coupled services and polyrepos for independent applications.</p>
-<h2 id="recommended-repository-layouts">Recommended Repository Layouts</h2>
-<h3 id="standard-application-layout">Standard Application Layout</h3>
-<div class="highlight"><pre><span></span><code>my-app/
-├── .github/             # GitHub-specific configurations (workflows, templates)
-├── docs/                # Project documentation
-├── src/                 # Source code (e.g., /src/main, /src/test)
-├── tests/               # Unit and integration tests
-├── build/               # Build outputs (e.g., dist/, target/)
-├── config/              # Configuration files (e.g., application.yml)
-├── scripts/             # Helper scripts (e.g., setup.sh, deploy.sh)
-├── .gitignore
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-└── package.json / pom.xml / requirements.txt (etc.)
-</code></pre></div>
-<h3 id="librarymodule-layout">Library/Module Layout</h3>
-<div class="highlight"><pre><span></span><code>my-library/
+<p>Repository boundaries shape code ownership, access control, build and release workflows, and the cost of cross-team changes. There is no universally best monorepo or polyrepo model. Choose the simplest structure that fits product boundaries, team responsibilities, security needs, and release cadence, then revisit the decision as those conditions change.</p>
+<p>This guide covers the choice between monorepos and polyrepos, repository layout, dependency practices, visibility, and discovery. It is a decision and implementation guide, not a prescription based on headcount alone.</p>
+<h2 id="choose-repository-boundaries">Choose repository boundaries</h2>
+<h3 id="monorepo">Monorepo</h3>
+<p>A monorepo stores multiple related applications, libraries, or services in one Git repository. It can make atomic cross-project changes and shared tooling easier. It also increases the need for clear ownership, selective builds, and access-control design.</p>
+<p>A monorepo is a good candidate when projects frequently change together, share internal packages, or benefit from common build and test tooling. It is a poor fit when projects require sharply different access boundaries, have unrelated release and ownership models, or cannot be isolated by the available tooling.</p>
+<h3 id="polyrepo">Polyrepo</h3>
+<p>A polyrepo model gives each service, product, or library its own repository. This supports independent permissions, ownership, and releases. It adds work for cross-repository changes, shared tooling, dependency upgrades, and organization-wide discovery.</p>
+<p>Polyrepo can work well when components have independent lifecycles, different security requirements, or distinct maintainer communities. It is not automatically faster: build time depends on the project and CI design, not only on repository count.</p>
+<h3 id="hybrid-model">Hybrid model</h3>
+<p>A hybrid model uses a monorepo for tightly coupled applications and shared libraries while keeping independently governed products or infrastructure in separate repositories. Define the boundary explicitly. Avoid splitting a codebase solely because one team or one tool prefers it.</p>
+<h3 id="decision-questions">Decision questions</h3>
+<p>Before choosing or changing a boundary, answer:</p>
+<ol>
+<li>Which components routinely need to change and deploy together?</li>
+<li>Who owns each component, and can ownership be represented clearly in the chosen structure?</li>
+<li>Do teams need separate read/write access or different compliance controls?</li>
+<li>Can the build system identify affected projects and reuse build outputs safely?</li>
+<li>How will dependencies be versioned, upgraded, and supported?</li>
+<li>How will engineers discover a repository, its owners, deployment path, dependencies, and support channel?</li>
+<li>What migration cost and operational burden will the new boundary create?</li>
+</ol>
+<p>Record the decision, assumptions, and signals that would trigger a review. Re-evaluate using actual change and operational data rather than a generic team-size threshold.</p>
+<h2 id="recommended-layouts">Recommended layouts</h2>
+<h3 id="application-repository">Application repository</h3>
+<div class="highlight"><pre><span></span><code>service-name/
 ├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── workflows/
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── docs/
 ├── src/
 ├── tests/
-├── examples/            # Usage examples
+├── scripts/
+├── config/
 ├── .gitignore
-├── README.md
+├── CONTRIBUTING.md
 ├── LICENSE
-└── package.json / setup.py (etc.)
-</code></pre></div>
-<h3 id="monorepo-layout-example-lernanx">Monorepo Layout (Example: Lerna/Nx)</h3>
-<div class="highlight"><pre><span></span><code>my-monorepo/
-├── .github/
-├── docs/
-├── packages/            # Contains individual projects/packages
-│   ├── service-a/
-│   ├── service-b/
-│   └── shared-ui/
-├── tools/               # Monorepo-specific tooling/scripts
-├── .gitignore
 ├── README.md
-├── lerna.json / nx.json (etc.)
-└── package.json
+├── SECURITY.md
+└── package.json or pyproject.toml or go.mod
 </code></pre></div>
-<h2 id="managing-dependencies">Managing Dependencies</h2>
-<h3 id="dependency-pinning">Dependency Pinning</h3>
+<p>Treat <code>dist/</code>, <code>build/</code>, <code>target/</code>, coverage output, and other generated files as build outputs. Commit them only when the publishing or runtime model specifically requires it; otherwise ignore them and publish versioned artifacts from CI.</p>
+<h3 id="monorepo_1">Monorepo</h3>
+<div class="highlight"><pre><span></span><code>product/
+├── .github/
+│   └── workflows/
+├── apps/
+│   ├── web/
+│   └── admin/
+├── services/
+│   ├── billing/
+│   └── identity/
+├── packages/
+│   └── shared-ui/
+├── infra/
+├── tools/
+├── docs/
+├── CODEOWNERS
+├── package.json
+└── workspace-config.json
+</code></pre></div>
+<p>Group code by deployable or owned unit. Give each unit a clear owner and an explicit dependency direction. Keep shared libraries small and intentional. Use a workspace/build tool that supports affected-project detection, caching, and dependency graphs when repository size makes full builds too expensive.</p>
+<h3 id="library-repository">Library repository</h3>
+<div class="highlight"><pre><span></span><code>library-name/
+├── .github/
+│   └── workflows/
+├── docs/
+├── examples/
+├── src/
+├── tests/
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+└── package.json or pyproject.toml or go.mod
+</code></pre></div>
+<p>Document the supported runtime and compatibility policy. Test published packages from the built artifact, not only from the source checkout.</p>
+<h2 id="monorepo-implementation">Monorepo implementation</h2>
+<p>Use a workspace or build system that matches the ecosystem and scale. Nx, Turborepo, Bazel, Gradle, and language-native workspaces solve overlapping but not identical problems. Compare setup cost, incremental correctness, remote-cache trust, supported languages, local developer workflow, and maintenance ownership before adopting one.</p>
+<p>A practical rollout is:</p>
+<ol>
+<li>Map packages, deployable units, dependencies, and owners.</li>
+<li>Establish a consistent package and test layout before moving code.</li>
+<li>Introduce workspace tooling and make local commands work without CI-specific assumptions.</li>
+<li>Add CI that tests affected projects and a scheduled or protected full-suite run.</li>
+<li>Cache only reproducible inputs and outputs; include toolchain and lockfile state in cache keys.</li>
+<li>Publish artifacts with immutable versions and explicit provenance.</li>
+<li>Track cross-project build time, cache hit rate, flaky tests, and ownership gaps.</li>
+</ol>
+<p>Do not use path filters as the only correctness guard if changes can affect shared tooling or downstream projects. Include shared configuration in the affected-project graph or run broader checks when impact cannot be determined.</p>
+<h2 id="polyrepo-implementation">Polyrepo implementation</h2>
+<p>Standardize the minimum needed to make repositories predictable while allowing teams to choose their own implementation details. A shared template can provide repository metadata, contribution and security files, baseline CI, branch rules, and dependency automation.</p>
+<p>For shared packages, publish immutable versions to an appropriate registry and use each consumer's lockfile or dependency lock mechanism. Define compatibility and deprecation policies. Avoid cross-repository coordination based on unversioned branches or undocumented manual steps.</p>
+<p>Where coordinated releases are required, use an explicit release plan, compatible version ranges, and an integration environment. For automation between repositories, scope credentials narrowly, make operations idempotent, and define what happens when one step fails.</p>
+<h2 id="dependency-and-supply-chain-practices">Dependency and supply-chain practices</h2>
 <ul>
-<li><strong>Rationale</strong>: Ensures reproducible builds and prevents unexpected breaking changes.</li>
-<li><strong>How</strong>: Pin dependencies to exact versions in <code>package.json</code>, <code>requirements.txt</code>, <code>pom.xml</code>, etc.</li>
+<li>Commit the ecosystem's lockfile where applicable and keep it in sync with dependency manifests.</li>
+<li>Use supported version ranges or exact versions according to the package manager and release policy; do not apply a single pinning rule to every ecosystem.</li>
+<li>Automate update proposals, then test and review them. Separate urgent security fixes from routine upgrades.</li>
+<li>Scan the relevant artifact types: source-code analysis, dependency vulnerabilities, container images, and infrastructure configuration are different checks.</li>
+<li>Generate an SBOM when a product, customer, or regulatory requirement justifies it. State the format, scope, and release to which it applies.</li>
+<li>Protect build credentials, registries, caches, and release artifacts. Define who can publish and how compromised credentials are revoked.</li>
 </ul>
-<h3 id="dependency-updates">Dependency Updates</h3>
+<h2 id="visibility-and-discoverability">Visibility and discoverability</h2>
+<p>Choose public, internal, or private visibility according to data classification, open-source intent, customer commitments, and access needs. Visibility does not replace permissions for sensitive actions or secrets. Review visibility when ownership or product scope changes.</p>
+<p>Every repository should make these items easy to find:</p>
 <ul>
-<li><strong>Automated</strong>: Use Dependabot or Renovate to automate dependency updates.</li>
-<li><strong>Scheduled</strong>: Schedule regular dependency update days/sprints.</li>
+<li>Purpose, lifecycle status, and supported versions.</li>
+<li>Owning team and a support or escalation path.</li>
+<li>Setup, test, build, and release commands.</li>
+<li>Deployment target and operational dashboard or runbook.</li>
+<li>Dependencies, APIs, and consumers where material.</li>
+<li>Contribution and security-reporting instructions.</li>
 </ul>
-<h3 id="supply-chain-security">Supply Chain Security</h3>
+<p>For larger estates, maintain a service catalog or repository index with ownership, criticality, dependencies, deployment status, and documentation links. Assign an owner to keep that metadata current. Innersource works when contribution expectations, review ownership, and support commitments are clear; visibility alone does not create collaboration.</p>
+<h2 id="common-failure-patterns">Common failure patterns</h2>
 <ul>
-<li><strong>Vulnerability scanning</strong>: Integrate tools like Snyk, GitHub CodeQL, or Trivy.</li>
-<li><strong>SBOMs</strong>: Generate Software Bill of Materials for better visibility.</li>
-<li><strong>Private package registries</strong>: Host internal packages securely.</li>
+<li>Repositories grouped by current team structure even though ownership boundaries change frequently.</li>
+<li>A monorepo without affected-project checks, module ownership, or a reliable local workflow.</li>
+<li>Polyrepos that duplicate workflow policy while allowing security controls to drift.</li>
+<li>Shared libraries published without compatibility guarantees or a maintainer.</li>
+<li>Generated build outputs committed accidentally or used as the only release artifact.</li>
+<li>A service catalog with no owner or update process.</li>
+<li>Repository migrations performed without a rollback plan, redirect strategy, or dependency inventory.</li>
 </ul>
-<h2 id="visibility-and-discoverability">Visibility and Discoverability</h2>
-<h3 id="readmemd-best-practices">README.md Best Practices</h3>
-<ul>
-<li><strong>Clear purpose</strong>: What does this repo do?</li>
-<li><strong>Quickstart</strong>: How to get started in 5 minutes.</li>
-<li><strong>Badges</strong>: CI status, code coverage, license, etc.</li>
-<li><strong>Table of Contents</strong>: For longer READMEs.</li>
-<li><strong>Links</strong>: To documentation, contributing guide, live demos.</li>
+<h2 id="implementation-checklist">Implementation checklist</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write down the boundary decision and the conditions that would change it.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify owners for each repository, service, package, and sensitive path.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Standardize the minimum repository metadata and onboarding commands.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ensure dependencies and build outputs are reproducible and distinguishable.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add CI checks appropriate to the repository's risk and release model.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Document release, rollback, and support paths.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add repositories and services to a maintained discovery index.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Review the structure after significant changes to teams, products, access needs, or deployment cadence.</li>
 </ul>
-<h3 id="project-documentation">Project Documentation</h3>
-<ul>
-<li><strong>Centralized</strong>: Use a <code>docs/</code> folder or a dedicated documentation site (e.g., MkDocs).</li>
-<li><strong>Up-to-date</strong>: Integrate documentation updates into your CI/CD pipeline.</li>
-</ul>
-<h3 id="repository-topics">Repository Topics</h3>
-<ul>
-<li>Use GitHub topics to categorize repositories and improve discoverability.</li>
-</ul>
-<h2 id="anti-patterns-and-warning-signs">Anti-Patterns and Warning Signs</h2>
-<ul>
-<li><strong>God repositories</strong>: Single repository containing unrelated projects.</li>
-<li><strong>Undocumented dependencies</strong>: No clear record of external dependencies.</li>
-<li><strong>Stale branches</strong>: Long-lived, unmerged branches.</li>
-<li><strong>Inconsistent structure</strong>: Different projects follow different conventions.</li>
-<li><strong>Lack of discoverability</strong>: Developers struggle to find relevant code or documentation.</li>
-</ul>
-<h2 id="expert-notes-structure-as-a-foundation">Expert Notes: Structure as a Foundation</h2>
-<blockquote>
-<p><strong>Elite Team Insight</strong>: A well-defined repository structure is not just about organization; it's a foundational element for scalability, maintainability, and developer productivity. It sets the stage for efficient collaboration.</p>
-<p><strong>Scaling Tip</strong>: For large organizations, consider a </p>
-</blockquote>
+<p><em>Last reviewed: 2026-11-24</em></p>
 
 
 
@@ -906,7 +1044,7 @@
       
     
     <a href="https://github.com/Rick1330/Mastering-Elite-Engineering-Workflows-with-GitHub-Scalable-Tooling-The-Playbook" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -923,10 +1061,11 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "search.share", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "search.share", "toc.integrate"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
       
